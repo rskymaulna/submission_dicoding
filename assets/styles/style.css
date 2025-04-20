@@ -238,6 +238,10 @@ aside .profile section table tr td {
     .text-logo .second-name {
         margin-left: -5px;
     }
+
+    .jumbotron p {
+        padding-inline: 1rem;
+    }
 }
 
 footer {
