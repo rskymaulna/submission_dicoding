@@ -1,0 +1,249 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header .navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 3rem;
+}
+
+.text-logo {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.text-logo .first-name {
+    color: #0b404a;
+}
+
+.text-logo .second-name {
+    color: #b0ccc7;
+}
+
+.nav-list ul {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem 1.5rem;
+}
+
+.nav-list li {
+    list-style-type: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0b404a;
+}
+
+.jumbotron {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f1f2e4;
+    height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.3)), url(../images/jumbotoron-image.jpeg) center/cover no-repeat;
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
+}
+
+.jumbotron p {
+    width: 100%;
+    max-width: 600px;
+    font-weight: 400;
+    text-align: center;
+}
+
+main {
+    margin-inline: auto;
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.25rem;
+}
+
+#content {
+    flex: 5;
+}
+
+aside {
+    flex: 1;
+}
+
+.profile img {
+    width: 150px;
+}
+
+.profile header {
+    text-align: center;
+}
+
+.profile header h2,
+.article-text h2 {
+    color: #0b404a;
+}
+
+.profile header p, .profile header figure figcaption {
+    color: #555f41;
+}
+
+.article-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-text {
+    flex: 1;
+}
+
+.article-text p {
+    text-align: justify;
+    font-size: 0.98rem;
+}
+
+.article-img-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-block: 1rem;
+}
+
+.article-img-container img {
+    border-radius: 2px;
+    height: 250px;
+}
+
+.list-wisata p {
+    font-weight: 500;
+    color: #0b404a;
+}
+
+.list-wisata ul li {
+    list-style-type: decimal;
+    line-height: 1.5rem;
+}
+
+aside .profile section table {
+    font-size: 0.9rem;
+    border-collapse: separate;
+    border-spacing: 2px 5px;
+}
+
+aside .profile section table tr th {
+    text-align: left;
+    font-weight: 600;
+    color: #0b404a;
+    display: flex;
+    align-items: flex-start;
+}
+
+aside .profile section table tr td {
+    color: #555f41;
+}
+
+
+
+@media screen and (max-width: 1180px) {
+    .article-flex {
+        flex-direction: column;
+    }
+
+    .profile img {
+        width: 130px;
+    }
+
+    .profile header h2 {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .jumbotron {
+        height: 60vh;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .profile {
+        display: flex;
+    }
+
+    .profile img {
+        width: 80px;
+    }
+
+    .profile header,
+    .profile header h2 {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-list ul {
+        gap: 0 1.5rem;
+    }
+
+    .nav-list a {
+        padding-block: 0;
+    }
+
+    .text-logo {
+        display: inline;
+    }
+
+    .text-logo .second-name {
+        margin-left: -5px;
+    }
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: #0b404a;
+    font-weight: 600;
+    color: #f1f2e4;
+}
