@@ -10,72 +10,84 @@ html {
 
 body {
     font-family: 'Raleway', sans-serif;
-    margin: 0;
-    padding: 0;
     height: 100vh;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+header {
+    overflow: visible;
+    display: inline;
 }
 
 header .navbar-container {
     width: 100%;
+    padding-block: 16px;
     display: flex;
     justify-content: center;
-    background-color: white;
     position: fixed;
     top: 0;
+    z-index: 999;
+    background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.navbar {
+header .navbar-container .navbar {
+    display: flex;
     width: 100%;
     max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 3rem;
+    justify-content: space-around;
+    align-items: baseline;
+    background-color: white;
+    /* border: 1px solid red; */
 }
 
-.text-logo {
-    display: flex;
+.navbar-container .navbar .text-logo{
+    display: inline;
+}
+
+.navbar .text-logo .first-name{
+    color: #0b404a;
     font-size: 1.5rem;
 }
 
-.text-logo .first-name {
-    color: #0b404a;
-}
-
-.text-logo .second-name {
+.navbar .text-logo .second-name{
     color: #b0ccc7;
+    font-size: 1.5rem;
+    margin-left: -4px;
 }
 
-.nav-list ul {
-    padding-left: 0;
+.navbar-container .navbar .nav-list ul {
     display: flex;
     justify-content: center;
-    gap: 2rem 1.5rem;
+    padding-left: 0;
+    gap: 2rem 2.5rem;
 }
 
-.nav-list li {
+.navbar-container .navbar .nav-list ul li {
     list-style-type: none;
 }
 
-.nav-list a {
+.navbar-container .navbar .nav-list ul li a{
+    padding-inline: 0.2rem;
     text-decoration: none;
-    padding: 0.8rem;
-    font-size: 1rem;
-    font-weight: 500;
     color: #0b404a;
 }
 
 .jumbotron {
-    flex: 1;
+    margin-top: 83.33px;
+    width: 100%;
+    padding: 8rem 3rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    color: #f1f2e4;
-    height: 90vh;
+    align-items: center;
+    text-align: center;
+    color: white;
     background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.3)), url(../images/jumbotoron-image.jpeg) center/cover no-repeat;
 }
 
@@ -84,170 +96,157 @@ header .navbar-container {
 }
 
 .jumbotron p {
-    width: 100%;
-    max-width: 600px;
-    font-weight: 400;
-    text-align: center;
+    width: 80%;
+    padding-inline: 2rem;
 }
 
 main {
-    margin-inline: auto;
-    flex: 1;
     width: 100%;
     max-width: 1200px;
-    padding: 1.5rem;
+    padding-inline: 3rem;
+    padding-top: 2.5rem;
+    flex: 1;
     display: flex;
-    gap: 1.25rem;
+    gap: 0 4rem;
 }
 
 #content {
     flex: 5;
 }
 
-aside {
+.article-flex {
+    display: flex;
+}
+
+.article-flex .article-text {
     flex: 1;
 }
 
-.profile img {
-    width: 150px;
-}
-
-.profile header {
-    text-align: center;
-}
-
-.profile header h2,
-.article-text h2 {
+.article-flex .article-text h2 {
     color: #0b404a;
 }
 
-.profile header p, .profile header figure figcaption {
-    color: #555f41;
-}
-
-.article-flex {
-    display: flex;
-    justify-content: space-between;
-}
-
-.article-text {
-    flex: 1;
-}
-
-.article-text p {
+.article-flex .article-text p {
     text-align: justify;
-    font-size: 0.98rem;
+    padding-right: 2rem;
 }
 
 .article-img-container {
     flex: 1;
     display: flex;
     justify-content: center;
-    padding-block: 1rem;
+    padding-top: 2rem;
 }
 
 .article-img-container img {
-    border-radius: 2px;
     height: 250px;
 }
 
 .list-wisata p {
     font-weight: 500;
-    color: #0b404a;
+    color: #0b404a; 
 }
 
 .list-wisata ul li {
     list-style-type: decimal;
-    line-height: 1.5rem;
+    margin-top: 0.5rem;
 }
 
-aside .profile section table {
-    font-size: 0.9rem;
-    border-collapse: separate;
-    border-spacing: 2px 5px;
+aside {
+    flex: 1;
 }
 
-aside .profile section table tr th {
-    text-align: left;
-    font-weight: 600;
+.profile header {
+    text-align: center;
     color: #0b404a;
-    display: flex;
-    align-items: flex-start;
 }
 
-aside .profile section table tr td {
-    color: #555f41;
+.profile header img {
+    width: 150px;
 }
 
+.profile section table tr th {
+    color: #0b404a;
+    text-align: left;
+}
 
+footer {
+    width: 100%;
+    background-color: #0b404a;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    padding: 1.5rem;
+}
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1190px) {
+    
+    .navbar-container .navbar .nav-list ul {
+        flex-wrap: wrap;
+    }
+
+    .navbar-container .navbar .nav-list ul li a {
+        font-size: 14px;
+    }
+
     .article-flex {
         flex-direction: column;
-    }
-
-    .profile img {
-        width: 130px;
-    }
-
-    .profile header h2 {
-        font-size: 1.25rem;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .jumbotron {
-        height: 60vh;
     }
 
     main {
         flex-direction: column;
     }
 
+    aside {
+        margin-block: 2rem;
+    }
+
     .profile {
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .profile img {
-        width: 80px;
+    .profile header {
+        flex: 1;
     }
 
-    .profile header,
-    .profile header h2 {
-        font-size: 0.8rem;
+    .profile section {
+        flex: 2;
+    }
+
+    .profile header img {
+        width: 100px;
     }
 }
 
-@media screen and (max-width: 700px) {
-    .navbar {
+@media screen and (max-width: 768px) {
+    header .navbar-container .navbar {
         flex-direction: column;
+        align-items: center;
+    }
+    
+    .article-img-container img {
+        height: 150px;
+    }
+    
+    .jumbotron {
+        margin-top: 111.33px;  
+        padding-block: 3rem;
     }
 
-    .nav-list ul {
-        gap: 0 1.5rem;
-    }
-
-    .nav-list a {
-        padding-block: 0;
-    }
-
-    .text-logo {
-        display: inline;
-    }
-
-    .text-logo .second-name {
-        margin-left: -5px;
+    .jumbotron h1 {
+        font-size: 1.5rem;
     }
 
     .jumbotron p {
-        padding-inline: 2rem;
+        font-size: 0.9rem;
     }
 }
 
-footer {
-    padding: 1rem;
-    text-align: center;
-    background-color: #0b404a;
-    font-weight: 600;
-    color: #f1f2e4;
+@media screen and (max-width: 360px) {
+
+    .jumbotron {
+        margin-top: 162.67px;  
+    }
 }
